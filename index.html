@@ -7,7 +7,81 @@
         <title>Image Carousel App</title>
     </head>
     <body>
-        <div id="app"></div>
+        <main class="content">
+            <h1>Image Slider</h1>
+            <div class="slider">
+                <div class="slider-progress"></div>
+                <div class="slider-btn-container">
+                    <button class="slider-btn slider-btn-left" aria-label="Move to the previous slide">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            viewBox="0 0 256 256"
+                        >
+                            <rect width="256" height="256" fill="none"></rect>
+                            <line
+                                x1="216"
+                                y1="128"
+                                x2="40"
+                                y2="128"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="16"
+                            ></line>
+                            <polyline
+                                points="112 56 40 128 112 200"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="16"
+                            ></polyline>
+                        </svg>
+                    </button>
+                    <button class="slider-btn slider-btn-right" aria-label="Move to the next slide">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            viewBox="0 0 256 256"
+                        >
+                            <rect width="256" height="256" fill="none"></rect>
+                            <line
+                                x1="40"
+                                y1="128"
+                                x2="216"
+                                y2="128"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="16"
+                            ></line>
+                            <polyline
+                                points="144 56 216 128 144 200"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="16"
+                            ></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/seed/inanis/1920/1080" alt="">
+                    <img src="https://picsum.photos/seed/gura/720/600" alt="">
+                    <img src="https://picsum.photos/seed/mori/960/480" alt="">
+                    <img src="https://picsum.photos/seed/amelia/1920/1080" alt="">
+                    <img src="https://picsum.photos/seed/kiara/1920/1080" alt="">
+                </div>
+            </div>
+        </main>
         <script type="module" src="/src/main.ts"></script>
     </body>
 </html>

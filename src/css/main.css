@@ -14,6 +14,10 @@
     --large-size-fluid: clamp(2.5rem, 6vw, 4.5rem);
 
     --box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+
+    /* property for the slider, we can modify it with javascript */
+    --slide-progress: 0%;
+    --slide-progress-transition: all 200ms cubic-bezier(0.82, 0.02, 0.39, 1.01);
 }
 
 /* Resetting */
@@ -57,7 +61,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     color: var(--text);
 
     background-color: var(--bg-body);
@@ -69,15 +73,115 @@ body {
 
     min-height: 100vh;
 
-    margin: var(--small-size-fluid);
+    padding: var(--small-size-fluid);
 }
 
 h1,
 h2,
 h3 {
     color: var(--accent);
+    font-size: var(--medium-size-fluid);
+    font-weight: 500;
 }
 
 a {
     color: var(--accent2);
+}
+
+.slider {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    max-width: 720px;
+
+    /* hide the images that are outside of the slide */
+    overflow: hidden;
+
+    box-shadow: var(--box-shadow);
+}
+
+.slide {
+    /* max-height for mobile */
+    max-height: 100vh;
+
+    /* all images are side by side but hidden because of overflow: hidden */
+    display: flex;
+}
+
+.slide img {
+    /* flex-grow flex-shrink flex-basis */
+    /* flex-grow means how much the item will grow compared to their siblings, 1 means grow to your normal size */
+    /* flex-shrink means how much the item will shrink compared to their siblings, 0 means do not shrink ever */
+    /* flex-basis is the initial length of the item */
+    flex: 1 0 100%;
+
+    object-fit: cover;
+}
+
+.slider-progress {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+
+    width: 100%;
+    height: 6px;
+
+    background-color: var(--bg-lighter);
+}
+
+.slider-progress::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+
+    background-color: var(--accent2);
+
+    width: var(--slide-progress);
+    height: 100%;
+
+    transition: var(--slide-progress-transition);
+}
+
+.slider-btn-container {
+    position: absolute;
+    z-index: 50;
+
+    width: 100%;
+}
+
+.slider-btn {
+    /* centralizing the svg */
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    top: 50%;
+
+    background-color: var(--bg-body);
+    color: var(--accent2);
+
+    border: none;
+    border-radius: 50%;
+
+    padding: 0.5rem;
+
+    cursor: pointer;
+}
+
+.slider-btn svg {
+    pointer-events: none;
+}
+
+.slider-btn-left {
+    left: 0;
+
+    transform: translate(50%, -50%);
+}
+
+.slider-btn-right {
+    right: 0;
+    transform: translate(-50%, -50%);
 }

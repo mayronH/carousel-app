@@ -1,0 +1,18 @@
+[
+    {
+        "url": "https://picsum.photos/seed/kenobi/960/480",
+        "alt": "Desert Image"
+    },
+    {
+        "url": "https://picsum.photos/seed/vader/960/480",
+        "alt": "Happy Image"
+    },
+    {
+        "url": "https://picsum.photos/seed/skywalker/960/480",
+        "alt": "Dead Forest Image"
+    },
+    {
+        "url": "https://picsum.photos/seed/solo/960/480",
+        "alt": "Stone Beach Image"
+    }
+]
